@@ -1,12 +1,12 @@
 package EVotersApp;
 
-public class Candidate extends Pvc {
-
-
+public class Candidate {
+    private PersonInformation basicPersonalInformation;
+    private ResidenceInformation residenceInformation;
+    private Pvc pvc;
     private PoliticalParty politicalParty;
 
-    public Candidate(BasicPersonalInformation basicPersonalInformation, ResidenceInformation residenceInformation, String serial_number, String pvc_code, String batch_code, PoliticalParty politicalParty) {
-        super(basicPersonalInformation, residenceInformation, serial_number, pvc_code, batch_code);
+    public Candidate(PersonInformation basicPersonalInformation, ResidenceInformation residenceInformation, PoliticalParty politicalParty) {
         this.politicalParty = politicalParty;
     }
 

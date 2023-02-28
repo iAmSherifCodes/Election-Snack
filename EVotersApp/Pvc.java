@@ -3,14 +3,13 @@ package EVotersApp;
 import java.time.LocalDate;
 
 public class Pvc {
-    private BasicPersonalInformation basicPersonalInformation;
-    private ResidenceInformation residenceInformation;
+    private String firstName
     private StringBuilder serial_number;
     private StringBuilder pvc_code;
     private StringBuilder batch_code;
     private LocalDate date_of_registration =  LocalDate.now();
 
-    public Pvc(BasicPersonalInformation basicPersonalInformation, ResidenceInformation residenceInformation) {
+    public Pvc(PersonInformation basicPersonalInformation, ResidenceInformation residenceInformation) {
         this.basicPersonalInformation = basicPersonalInformation;
         this.residenceInformation = residenceInformation;
     }
@@ -19,11 +18,11 @@ public class Pvc {
 
     }
 
-    public BasicPersonalInformation getBasicPersonalInformation() {
+    public PersonInformation getBasicPersonalInformation() {
         return basicPersonalInformation;
     }
 
-    public void setBasicPersonalInformation(BasicPersonalInformation basicPersonalInformation) {
+    public void setBasicPersonalInformation(PersonInformation basicPersonalInformation) {
         this.basicPersonalInformation = basicPersonalInformation;
     }
 
@@ -44,7 +43,7 @@ public class Pvc {
     }
 
     public StringBuilder getPvc_code() {
-        pvc_code = RandomNumbers.generateNumbers(9);
+        pvc_code = new StringBuilder(String.format("%s-%s-%s-%s",RandomNumbers.generateNumbers(2),RandomNumbers.generateNumbers(2),RandomNumbers.generateNumbers(2),RandomNumbers.generateNumbers(3)));
         return pvc_code;
     }
 
